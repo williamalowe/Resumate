@@ -29,6 +29,9 @@ const App = () => {
         variants={sidebar}
         initial='inactive'
         whileHover='active'
+        transition={{
+          delayChildren: 0
+        }}
       >
         <motion.div
           variants={child}

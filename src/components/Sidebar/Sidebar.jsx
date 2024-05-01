@@ -1,9 +1,10 @@
+import SidebarHeader from '../SidebarHeader/SidebarHeader';
 import styles from './Sidebar.module.css';
 
 const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
-      hello asdas dasd asd asdas dasd 
+      <SidebarHeader /> 
     </div>
   )
 }
