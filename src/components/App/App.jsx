@@ -21,6 +21,8 @@ const child = {
 }
 
 const App = () => {
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
 
   return (
     <main className={styles.app}>
@@ -36,12 +38,16 @@ const App = () => {
         <motion.div
           variants={child}
         >
-          <Sidebar />
+          <Sidebar 
+            handleFirstName={(e) => setFirstName(e.target.value)}
+            handleLastName={(e) => setLastName(e.target.value)}
+          />
         </motion.div>
       </motion.section>
       <article className={styles.canvas}>
         <div className={styles.content}>
-
+          {firstName}
+          {lastName}
         </div>
       </article>
     </main>
