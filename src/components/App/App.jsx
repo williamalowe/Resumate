@@ -38,13 +38,13 @@ const App = () => {
         initial='inactive'
         whileHover='active'
         transition={{
-          delayChildren: 0
+          delayChildren: 0.2
         }}
       >
         <motion.div
           variants={child}
         >
-          <Sidebar 
+          {/* <Sidebar 
             handleFirstName={(e) => setFirstName(e.target.value)}
             handleLastName={(e) => setLastName(e.target.value)}
             handlePosition={(e) => setPosition(e.target.value)}
@@ -53,7 +53,7 @@ const App = () => {
             handleEmail={(e) => setEmail(e.target.value)}
             handlePersonalSite={(e) => setPersonalSite(e.target.value)}
             handleAddress={(e) => setHomeAddress(e.target.value)}
-          />
+          /> */}
         </motion.div>
       </motion.section>
       <article className={styles.canvas}>
