@@ -25,6 +25,10 @@ const App = () => {
   const [lastName, setLastName] = useState(null);
   const [position, setPosition] = useState(null);
   const [bio, setBio] = useState(null);
+  const [contactNumber, setContactNumber] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [personalSite, setPersonalSite] = useState(null);
+  const [homeAddress, setHomeAddress] = useState(null);
 
   return (
     <main className={styles.app}>
@@ -45,6 +49,10 @@ const App = () => {
             handleLastName={(e) => setLastName(e.target.value)}
             handlePosition={(e) => setPosition(e.target.value)}
             handleBio={(e) => setBio(e.target.value)}
+            handleContactNumber={(e) => setContactNumber(e.target.value)}
+            handleEmail={(e) => setEmail(e.target.value)}
+            handlePersonalSite={(e) => setPersonalSite(e.target.value)}
+            handleAddress={(e) => setHomeAddress(e.target.value)}
           />
         </motion.div>
       </motion.section>
@@ -54,6 +62,10 @@ const App = () => {
           {lastName}
           {position}
           {bio}
+          {contactNumber}
+          {email}
+          {personalSite}
+          {homeAddress}
         </div>
       </article>
     </main>
