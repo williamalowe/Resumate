@@ -6,6 +6,7 @@ import { useState } from 'react';
 import PersonalInput from '../PersonalInput/PersonalInput';
 import AboutInput from '../AboutInput/AboutInput';
 import ContactInput from '../ContactInput/ContactInput';
+import SkillsInput from '../SkillsInput/SkillsInput';
 
 const sidebar = {
   inactive: {
@@ -34,6 +35,12 @@ const App = () => {
   const [emailAddress, setEmailAddress] = useState(null);
   const [personalSite, setPersonalSite] = useState(null);
   const [streetAddress, setStreetAddress] = useState(null);
+  const [skills, setSkills] = useState(['test', 'something else']);
+
+  const addSkill = (input) => {
+    const newSkill = input
+    setSkills(skills => [...skills, newSkill]);
+  }
 
   return (
     <main className={styles.app}>
@@ -49,16 +56,6 @@ const App = () => {
         <motion.div
           variants={child}
         >
-          {/* <Sidebar 
-            handleFirstName={(e) => setFirstName(e.target.value)}
-            handleLastName={(e) => setLastName(e.target.value)}
-            handlePosition={(e) => setPosition(e.target.value)}
-            handleBio={(e) => setBio(e.target.value)}
-            handleContactNumber={(e) => setContactNumber(e.target.value)}
-            handleEmail={(e) => setEmail(e.target.value)}
-            handlePersonalSite={(e) => setPersonalSite(e.target.value)}
-            handleAddress={(e) => setHomeAddress(e.target.value)}
-          /> */}
           <SidebarHeader />
           <PersonalInput 
             handleFirstName={(e) => setFirstName(e.target.value)}
@@ -75,7 +72,9 @@ const App = () => {
             handlePosition={(e) => setPosition(e.target.value)}
             handleBio={(e) => setBio(e.target.value)}
           />
-          
+          <SkillsInput 
+            handleClick={(newSkill) => setSkills(skills => [...skills, newSkill])}
+          />
         </motion.div>
       </motion.section>
       <article className={styles.canvas}>
@@ -99,6 +98,13 @@ const App = () => {
           <div>
             {streetAddress}
           </div>
+          <ul>
+            {
+              skills.map((skill, index) =>
+              <li key={index}>{skill}</li>
+            )
+            }
+          </ul>
         </div>
       </article>
     </main>
