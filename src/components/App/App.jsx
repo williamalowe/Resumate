@@ -1,7 +1,12 @@
 import styles from './App.module.css';
 import { motion } from 'framer-motion';
-import Sidebar from '../Sidebar/Sidebar';
+// import Sidebar from '../Sidebar/Sidebar';
+import SidebarHeader from '../SidebarHeader/SidebarHeader';
 import { useState } from 'react';
+import PersonalInput from '../PersonalInput/PersonalInput';
+import AboutInput from '../AboutInput/AboutInput';
+import ContactInput from '../ContactInput/ContactInput';
+import SkillsInput from '../SkillsInput/SkillsInput';
 
 const sidebar = {
   inactive: {
@@ -23,12 +28,19 @@ const child = {
 const App = () => {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
+  const [middleName, setMiddleName] = useState(null);
   const [position, setPosition] = useState(null);
   const [bio, setBio] = useState(null);
   const [contactNumber, setContactNumber] = useState(null);
-  const [email, setEmail] = useState(null);
+  const [emailAddress, setEmailAddress] = useState(null);
   const [personalSite, setPersonalSite] = useState(null);
-  const [homeAddress, setHomeAddress] = useState(null);
+  const [streetAddress, setStreetAddress] = useState(null);
+  const [skills, setSkills] = useState(['test', 'something else']);
+
+  const addSkill = (input) => {
+    const newSkill = input
+    setSkills(skills => [...skills, newSkill]);
+  }
 
   return (
     <main className={styles.app}>
@@ -44,28 +56,55 @@ const App = () => {
         <motion.div
           variants={child}
         >
-          {/* <Sidebar 
+          <SidebarHeader />
+          <PersonalInput 
             handleFirstName={(e) => setFirstName(e.target.value)}
             handleLastName={(e) => setLastName(e.target.value)}
+            handleMiddleName={(e) => setMiddleName(e.target.value)}
+          />
+          <ContactInput 
+            handleContactNumber={(e) => setContactNumber(e.target.value)}
+            handleEmailAddress={(e) => setEmailAddress(e.target.value)}
+            handlePersonalSite={(e) => setPersonalSite(e.target.value)}
+            handleStreetAddress={(e) => setStreetAddress(e.target.value)}
+          />
+          <AboutInput 
             handlePosition={(e) => setPosition(e.target.value)}
             handleBio={(e) => setBio(e.target.value)}
-            handleContactNumber={(e) => setContactNumber(e.target.value)}
-            handleEmail={(e) => setEmail(e.target.value)}
-            handlePersonalSite={(e) => setPersonalSite(e.target.value)}
-            handleAddress={(e) => setHomeAddress(e.target.value)}
-          /> */}
+          />
+          <SkillsInput 
+            handleClick={(newSkill) => setSkills(skills => [...skills, newSkill])}
+          />
         </motion.div>
       </motion.section>
       <article className={styles.canvas}>
         <div className={styles.content}>
-          {firstName}
-          {lastName}
-          {position}
-          {bio}
-          {contactNumber}
-          {email}
-          {personalSite}
-          {homeAddress}
+          {firstName + ' ' + middleName + ' ' + lastName}
+          <div>
+            {position}
+          </div>
+          <div>
+            {bio}
+          </div>
+          <div>
+            {contactNumber}
+          </div>
+          <div>
+            {emailAddress}
+          </div>
+          <div>
+            {personalSite}
+          </div>
+          <div>
+            {streetAddress}
+          </div>
+          <ul>
+            {
+              skills.map((skill, index) =>
+              <li key={index}>{skill}</li>
+            )
+            }
+          </ul>
         </div>
       </article>
     </main>

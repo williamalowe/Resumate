@@ -1,9 +1,9 @@
-.contact {
+.personal {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.contact>button {
+.personal>button {
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@
   font-weight: 600;
   cursor: pointer;
 }
-.contact>button>div:last-child {
+.personal>button>div:last-child {
   margin-left: auto;
 }
 .content {

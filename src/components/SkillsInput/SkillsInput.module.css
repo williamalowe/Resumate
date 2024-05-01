@@ -1,9 +1,9 @@
-.contact {
+.skills {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.contact>button {
+.skills>button {
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@
   font-weight: 600;
   cursor: pointer;
 }
-.contact>button>div:last-child {
+.skills>button>div:last-child {
   margin-left: auto;
 }
 .content {
@@ -23,11 +23,24 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-.input>input {
+.input>div {
+  display: flex;
+  gap: 0.25rem;
+}
+.input>div>input {
   width: 75%;
   font-size: 0.8rem;
   font-family: "Roboto", sans-serif;
   background: #fff;
   border: none;
   padding: 0.25rem;
+}
+.input>div>button {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
 }
