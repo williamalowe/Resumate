@@ -5,6 +5,7 @@ import SidebarHeader from '../SidebarHeader/SidebarHeader';
 import { useState } from 'react';
 import PersonalInput from '../PersonalInput/PersonalInput';
 import AboutInput from '../AboutInput/AboutInput';
+import ContactInput from '../ContactInput/ContactInput';
 
 const sidebar = {
   inactive: {
@@ -30,9 +31,9 @@ const App = () => {
   const [position, setPosition] = useState(null);
   const [bio, setBio] = useState(null);
   const [contactNumber, setContactNumber] = useState(null);
-  const [email, setEmail] = useState(null);
+  const [emailAddress, setEmailAddress] = useState(null);
   const [personalSite, setPersonalSite] = useState(null);
-  const [homeAddress, setHomeAddress] = useState(null);
+  const [streetAddress, setStreetAddress] = useState(null);
 
   return (
     <main className={styles.app}>
@@ -64,10 +65,17 @@ const App = () => {
             handleLastName={(e) => setLastName(e.target.value)}
             handleMiddleName={(e) => setMiddleName(e.target.value)}
           />
+          <ContactInput 
+            handleContactNumber={(e) => setContactNumber(e.target.value)}
+            handleEmailAddress={(e) => setEmailAddress(e.target.value)}
+            handlePersonalSite={(e) => setPersonalSite(e.target.value)}
+            handleStreetAddress={(e) => setStreetAddress(e.target.value)}
+          />
           <AboutInput 
             handlePosition={(e) => setPosition(e.target.value)}
             handleBio={(e) => setBio(e.target.value)}
           />
+          
         </motion.div>
       </motion.section>
       <article className={styles.canvas}>
@@ -78,6 +86,18 @@ const App = () => {
           </div>
           <div>
             {bio}
+          </div>
+          <div>
+            {contactNumber}
+          </div>
+          <div>
+            {emailAddress}
+          </div>
+          <div>
+            {personalSite}
+          </div>
+          <div>
+            {streetAddress}
           </div>
         </div>
       </article>

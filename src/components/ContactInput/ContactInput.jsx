@@ -1,16 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
-import styles from './AboutInput.module.css';
+import styles from './ContactInput.module.css';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
-const AboutInput = ({ handlePosition, handleBio }) => {
+const ContactInput = ({ handleContactNumber, handleEmailAddress, handlePersonalSite, handleStreetAddress }) => {
   const [showContent, setShowContent] = useState(false);
   return (
-    <div className={styles.about}>
+    <div className={styles.contact}>
       <button onClick={() => setShowContent(!showContent)}>
-        <div>About You</div>
+        <div>Contact Details</div>
         {
           showContent ? 
             <div>
@@ -41,12 +41,20 @@ const AboutInput = ({ handlePosition, handleBio }) => {
             }}
           >
             <div className={styles.input}>
-              <h5>Position/Role: </h5>
-              <input type="text" placeholder='Frontend Developer' onChange={handlePosition}/>
+              <h5>Contact Number: </h5>
+              <input type="text" placeholder='0412 345 678' onChange={handleContactNumber}/>
             </div>
             <div className={styles.input}>
-              <h5>Bio: </h5>
-              <textarea name="" id="" cols="30" rows="10" placeholder='Tell us about yourself...' onChange={handleBio}></textarea>
+              <h5>Email Address: </h5>
+              <input type="text" placeholder='YourEmail@provider.com' onChange={handleEmailAddress}/>
+            </div>
+            <div className={styles.input}>
+              <h5>Personal Site (Optional): </h5>
+              <input type="text" placeholder='PersonalSite.com' onChange={handlePersonalSite}/>
+            </div>
+            <div className={styles.input}>
+              <h5>Street Address (Optional): </h5>
+              <input type="text" placeholder='123 Street, Suburb, City' onChange={handleStreetAddress}/>
             </div>
           </motion.div>
         }
@@ -55,4 +63,4 @@ const AboutInput = ({ handlePosition, handleBio }) => {
   )
 }
 
-export default AboutInput
+export default ContactInput
