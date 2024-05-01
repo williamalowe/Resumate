@@ -8,6 +8,7 @@
   width: 25vw;
   height: 100%;
   background: var(--background-color);
+  cursor: pointer;
 }
 .canvas {
   flex-grow: 1;
