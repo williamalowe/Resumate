@@ -23,6 +23,8 @@ const child = {
 const App = () => {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
+  const [position, setPosition] = useState(null);
+  const [bio, setBio] = useState(null);
 
   return (
     <main className={styles.app}>
@@ -41,6 +43,8 @@ const App = () => {
           <Sidebar 
             handleFirstName={(e) => setFirstName(e.target.value)}
             handleLastName={(e) => setLastName(e.target.value)}
+            handlePosition={(e) => setPosition(e.target.value)}
+            handleBio={(e) => setBio(e.target.value)}
           />
         </motion.div>
       </motion.section>
@@ -48,6 +52,8 @@ const App = () => {
         <div className={styles.content}>
           {firstName}
           {lastName}
+          {position}
+          {bio}
         </div>
       </article>
     </main>
