@@ -1,6 +1,6 @@
 import styles from './App.module.css';
 import { motion } from 'framer-motion';
-import Sidebar from './Sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 import { useState } from 'react';
 
 const sidebar = {
