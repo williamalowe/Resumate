@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import SidebarHeader from '../SidebarHeader/SidebarHeader';
 import { useState } from 'react';
 import PersonalInput from '../PersonalInput/PersonalInput';
+import AboutInput from '../AboutInput/AboutInput';
 
 const sidebar = {
   inactive: {
@@ -63,12 +64,21 @@ const App = () => {
             handleLastName={(e) => setLastName(e.target.value)}
             handleMiddleName={(e) => setMiddleName(e.target.value)}
           />
-          <PersonalInput />
+          <AboutInput 
+            handlePosition={(e) => setPosition(e.target.value)}
+            handleBio={(e) => setBio(e.target.value)}
+          />
         </motion.div>
       </motion.section>
       <article className={styles.canvas}>
         <div className={styles.content}>
           {firstName + ' ' + middleName + ' ' + lastName}
+          <div>
+            {position}
+          </div>
+          <div>
+            {bio}
+          </div>
         </div>
       </article>
     </main>

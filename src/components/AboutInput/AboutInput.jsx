@@ -1,16 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown';
-import styles from './PersonalInput.module.css';
+import styles from './AboutInput.module.css';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
-const PersonalInput = ({ handleFirstName, handleMiddleName, handleLastName }) => {
+const AboutInput = ({ handlePosition, handleBio }) => {
   const [showContent, setShowContent] = useState(false);
   return (
-    <div className={styles.personal}>
+    <div className={styles.about}>
       <button onClick={() => setShowContent(!showContent)}>
-        <div>Personal Info</div>
+        <div>About You</div>
         {
           showContent ? 
             <div>
@@ -41,16 +41,12 @@ const PersonalInput = ({ handleFirstName, handleMiddleName, handleLastName }) =>
             }}
           >
             <div className={styles.input}>
-              <h5>First Name: </h5>
-              <input type="text" placeholder='William' onChange={handleFirstName}/>
+              <h5>Position/Role:: </h5>
+              <input type="text" placeholder='Frontend Developer' onChange={handlePosition}/>
             </div>
             <div className={styles.input}>
-              <h5>Last Name: </h5>
-              <input type="text" placeholder='Lowe' onChange={handleLastName}/>
-            </div>
-            <div className={styles.input}>
-              <h5>Middle Name (Optional): </h5>
-              <input type="text" placeholder='Andrew' onChange={handleMiddleName}/>
+              <h5>Bio: </h5>
+              <textarea name="" id="" cols="30" rows="10" placeholder='Tell us about yourself...' onChange={handleBio}></textarea>
             </div>
           </motion.div>
         }
@@ -59,4 +55,4 @@ const PersonalInput = ({ handleFirstName, handleMiddleName, handleLastName }) =>
   )
 }
 
-export default PersonalInput
+export default AboutInput
