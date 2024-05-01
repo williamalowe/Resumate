@@ -1,0 +1,32 @@
+.personal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.personal>button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--text-color);
+  padding: 0.25rem 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.personal>button>div:last-child {
+  margin-left: auto;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.input>input {
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+  background: #fff;
+  border: none;
+  padding: 0.25rem;
+}

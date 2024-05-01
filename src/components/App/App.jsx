@@ -1,7 +1,9 @@
 import styles from './App.module.css';
 import { motion } from 'framer-motion';
-import Sidebar from '../Sidebar/Sidebar';
+// import Sidebar from '../Sidebar/Sidebar';
+import SidebarHeader from '../SidebarHeader/SidebarHeader';
 import { useState } from 'react';
+import PersonalInput from '../PersonalInput/PersonalInput';
 
 const sidebar = {
   inactive: {
@@ -23,6 +25,7 @@ const child = {
 const App = () => {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
+  const [middleName, setMiddleName] = useState(null);
   const [position, setPosition] = useState(null);
   const [bio, setBio] = useState(null);
   const [contactNumber, setContactNumber] = useState(null);
@@ -54,18 +57,18 @@ const App = () => {
             handlePersonalSite={(e) => setPersonalSite(e.target.value)}
             handleAddress={(e) => setHomeAddress(e.target.value)}
           /> */}
+          <SidebarHeader />
+          <PersonalInput 
+            handleFirstName={(e) => setFirstName(e.target.value)}
+            handleLastName={(e) => setLastName(e.target.value)}
+            handleMiddleName={(e) => setMiddleName(e.target.value)}
+          />
+          <PersonalInput />
         </motion.div>
       </motion.section>
       <article className={styles.canvas}>
         <div className={styles.content}>
-          {firstName}
-          {lastName}
-          {position}
-          {bio}
-          {contactNumber}
-          {email}
-          {personalSite}
-          {homeAddress}
+          {firstName + ' ' + middleName + ' ' + lastName}
         </div>
       </article>
     </main>
