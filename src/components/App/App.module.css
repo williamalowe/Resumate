@@ -5,20 +5,24 @@
   overflow: hidden;
 }
 .sidebar {
-  width: 25vw;
-  height: 100%;
-  padding: 1rem;
-  background: var(--background-color);
+  background: var(--text-color);
+  width: 4rem;
 }
-.canvas {
-  flex-grow: 1;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.sidebar_button {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--text-color);
+  top: calc(50% - 4rem);
+  left: 2rem;
+  cursor: pointer;
 }
-.content {
-  height: 100%;
-  aspect-ratio: 2/3;
-  border: 2px solid var(--background-color);
+.sidebar_button>svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.sidebar_content {
+  background: var(--text-color);
 }
