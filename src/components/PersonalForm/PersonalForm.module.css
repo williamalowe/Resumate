@@ -8,7 +8,7 @@
   align-items: center;
   gap: 1rem;
 }
-.input>h5 {
+.input>h5, .bio>h5 {
   flex: 1;
   font-weight: 400;
   font-size: 0.8rem;
@@ -20,4 +20,8 @@
   color: #fff;
   border: none;
   border-bottom: 1px solid #fff;
+}
+.bio>textarea {
+  width: 80%;
+  font-size: 0.8rem;
 }

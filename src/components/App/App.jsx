@@ -13,10 +13,12 @@ const App = () => {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [profession, setProfession] = useState(null);
+  const [bio, setBio] = useState(null);
   const [contactNumber, setContactNumber] = useState(null);
   const [emailAddress, setEmailAddress] = useState(null);
   const [personalSite, setPersonalSite] = useState(null);
   const [StreetAddress, setStreetAddress] = useState(null);
+  const [skills, setSkills] = useState([]);
 
   return (
     <main className={styles.app}>
@@ -52,6 +54,7 @@ const App = () => {
                 handleFirstName={(e) => setFirstName(e.target.value)}
                 handleLastName={(e) => setLastName(e.target.value)}
                 handleProfession={(e) => setProfession(e.target.value)}
+                handleBio={(e) => setBio(e.target.value)}
               />
             </Accordion>
             {/* Contact Details */}
@@ -92,10 +95,18 @@ const App = () => {
         {firstName}-
         {lastName}-
         {profession}-
+        {bio}-
         {contactNumber}-
         {emailAddress}-
         {personalSite}-
         {StreetAddress}-
+        <ul>
+          {
+            skills.map((skill, index) => 
+            <li key={index}>{skill}</li>
+          )
+          }
+        </ul>
       </div>
     </main>
   )
