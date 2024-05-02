@@ -8,6 +8,7 @@ import Logo from '../Logo/Logo';
 import PersonalForm from '../PersonalForm/PersonalForm';
 import ContactForm from '../ContactForm/ContactForm';
 import SkillsForm from '../SkillsForm/SkillsForm';
+import ExperienceForm from '../ExperienceForm/ExperienceForm';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -20,10 +21,22 @@ const App = () => {
   const [personalSite, setPersonalSite] = useState(null);
   const [StreetAddress, setStreetAddress] = useState(null);
   const [skills, setSkills] = useState([]);
+  const [experience, setExperience] = useState([]);
 
   const addSkill = (value) => {
     const newSkill = value;
     setSkills(skills => [...skills, newSkill])
+  }
+
+  const addExperience = (workplace, role, start, end, description) => {
+    const newExperience = {
+      workplace: workplace,
+      role: role,
+      start: start,
+      end: end,
+      description: description
+    };
+    setExperience(experience => [...experience, newExperience]);
   }
 
   return (
@@ -82,6 +95,26 @@ const App = () => {
                 handleSubmit={addSkill}
               />
             </Accordion>
+            {/* Work Experience */}
+            <Accordion
+              header="Work Experience"
+            >
+              <ExperienceForm 
+                handleSubmit={addExperience}
+              />
+            </Accordion>
+            {/* Education*/}
+            <Accordion
+              header="Education"
+            >
+
+            </Accordion>
+            {/* References */}
+            <Accordion
+              header="References"
+            >
+              
+            </Accordion>
             </motion.div>
           </motion.div>
         }
@@ -118,6 +151,20 @@ const App = () => {
           {
             skills.map((skill, index) => 
             <li key={index}>{skill}</li>
+          )
+          }
+        </ul>
+        -
+        <ul>
+          {
+            experience.map((exp, index) => 
+            <li key={index}>
+              {exp.workplace}-
+              {exp.role}-
+              {exp.start}-
+              {exp.end}-
+              {exp.description}-
+            </li>
           )
           }
         </ul>
