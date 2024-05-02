@@ -6,12 +6,17 @@ import styles from './App.module.css';
 import Accordion from '../Accordion/Accordion';
 import Logo from '../Logo/Logo';
 import PersonalForm from '../PersonalForm/PersonalForm';
+import ContactForm from '../ContactForm/ContactForm';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [profession, setProfession] = useState(null);
+  const [contactNumber, setContactNumber] = useState(null);
+  const [emailAddress, setEmailAddress] = useState(null);
+  const [personalSite, setPersonalSite] = useState(null);
+  const [StreetAddress, setStreetAddress] = useState(null);
 
   return (
     <main className={styles.app}>
@@ -39,6 +44,7 @@ const App = () => {
               }}
             >
             <Logo />
+            {/* Personal Details */}
             <Accordion
               header="Personal Details"
             >
@@ -46,6 +52,17 @@ const App = () => {
                 handleFirstName={(e) => setFirstName(e.target.value)}
                 handleLastName={(e) => setLastName(e.target.value)}
                 handleProfession={(e) => setProfession(e.target.value)}
+              />
+            </Accordion>
+            {/* Contact Details */}
+            <Accordion
+              header="Contact Details"
+            >
+              <ContactForm 
+                handleContactNumber={(e) => setContactNumber(e.target.value)}
+                handleEmailAddress={(e) => setEmailAddress(e.target.value)}
+                handlePersonalSite={(e) => setPersonalSite(e.target.value)}
+                handleStreetAddress={(e) => setStreetAddress(e.target.value)}
               />
             </Accordion>
             </motion.div>
@@ -75,6 +92,10 @@ const App = () => {
         {firstName}-
         {lastName}-
         {profession}-
+        {contactNumber}-
+        {emailAddress}-
+        {personalSite}-
+        {StreetAddress}-
       </div>
     </main>
   )
