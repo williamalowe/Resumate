@@ -5,9 +5,14 @@ import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 import styles from './App.module.css';
 import Accordion from '../Accordion/Accordion';
 import Logo from '../Logo/Logo';
+import PersonalForm from '../PersonalForm/PersonalForm';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [profession, setProfession] = useState(null);
+
   return (
     <main className={styles.app}>
       <AnimatePresence mode='wait'>
@@ -35,9 +40,13 @@ const App = () => {
             >
             <Logo />
             <Accordion
-              header="testy"
+              header="Personal Details"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime modi deleniti distinctio, asperiores nesciunt quibusdam animi libero possimus eum. Modi laboriosam eligendi similique nemo? Iure exercitationem enim aliquid voluptates perferendis!
+              <PersonalForm 
+                handleFirstName={(e) => setFirstName(e.target.value)}
+                handleLastName={(e) => setLastName(e.target.value)}
+                handleProfession={(e) => setProfession(e.target.value)}
+              />
             </Accordion>
             </motion.div>
           </motion.div>
@@ -63,7 +72,9 @@ const App = () => {
         </motion.button>
       </div>
       <div className={styles.content}>
-        Content
+        {firstName}-
+        {lastName}-
+        {profession}-
       </div>
     </main>
   )
