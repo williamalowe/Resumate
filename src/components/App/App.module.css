@@ -25,4 +25,6 @@
 }
 .sidebar_content {
   background: var(--text-color);
+  box-sizing: border-box;
+  padding: 1rem;
 }

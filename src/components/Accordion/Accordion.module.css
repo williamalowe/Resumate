@@ -1,0 +1,25 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.accordion>button {
+  width: 100%;
+  border: none;
+  background: none;
+  font-family: "Space Grotesk", sans-serif;
+  display: flex;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+.accordion>button>div {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.accordion>button>div:last-child {
+  margin-left: auto;
+}
+.content {
+  color: #fff;
+}
