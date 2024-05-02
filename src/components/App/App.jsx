@@ -7,6 +7,7 @@ import Accordion from '../Accordion/Accordion';
 import Logo from '../Logo/Logo';
 import PersonalForm from '../PersonalForm/PersonalForm';
 import ContactForm from '../ContactForm/ContactForm';
+import SkillsForm from '../SkillsForm/SkillsForm';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -19,6 +20,11 @@ const App = () => {
   const [personalSite, setPersonalSite] = useState(null);
   const [StreetAddress, setStreetAddress] = useState(null);
   const [skills, setSkills] = useState([]);
+
+  const addSkill = (value) => {
+    const newSkill = value;
+    setSkills(skills => [...skills, newSkill])
+  }
 
   return (
     <main className={styles.app}>
@@ -66,6 +72,14 @@ const App = () => {
                 handleEmailAddress={(e) => setEmailAddress(e.target.value)}
                 handlePersonalSite={(e) => setPersonalSite(e.target.value)}
                 handleStreetAddress={(e) => setStreetAddress(e.target.value)}
+              />
+            </Accordion>
+            {/* Skills */}
+            <Accordion
+              header="Skills List"
+            >
+              <SkillsForm 
+                handleSubmit={addSkill}
               />
             </Accordion>
             </motion.div>

@@ -1,0 +1,29 @@
+.form {
+  display: flex;
+  align-items: center;
+}
+.form>h5 {
+  color: #fff;
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.input {
+  flex: 2;
+  display: flex;
+  gap: 0.25rem;
+}
+.input>input {
+  background: none;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff
+}
+.input>button {
+  background: none;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.input>button>svg {
+  color: #fff;
+}
