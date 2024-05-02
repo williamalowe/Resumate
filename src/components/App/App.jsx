@@ -62,7 +62,8 @@ const App = () => {
               width: 0
             }}
             animate={{
-              width: '20vw'
+              width: '25vw',
+              paddingLeft: '2rem'
             }}
             exit={{
               width: 0
