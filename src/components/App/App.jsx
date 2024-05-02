@@ -59,14 +59,16 @@ const App = () => {
           <motion.div 
             className={styles.sidebar_content}
             initial={{
-              width: 0
+              width: 0,
+              paddingLeft: 0
             }}
             animate={{
               width: '25vw',
               paddingLeft: '2rem'
             }}
             exit={{
-              width: 0
+              width: 0,
+              paddingLeft: 0
             }}
           >
             <motion.div
