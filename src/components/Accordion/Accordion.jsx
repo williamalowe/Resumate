@@ -9,7 +9,15 @@ const Accordion = ({ header, children }) => {
 
   return (
     <div className={styles.accordion}>
-      <button onClick={() => setActive(!active)}>
+      <motion.button 
+        onClick={() => setActive(!active)}
+        whileHover={{
+          scale: 1.1
+        }}
+        whileTap={{
+          scale: 0.9
+        }}
+      >
         <div>{header}</div>
         <div>
           {
@@ -19,7 +27,7 @@ const Accordion = ({ header, children }) => {
             <FontAwesomeIcon icon={faCaretDown} />
           }
         </div>
-      </button>
+      </motion.button>
       <AnimatePresence>
       {
         active &&
