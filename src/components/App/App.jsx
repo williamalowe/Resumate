@@ -10,7 +10,7 @@ const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <main className={styles.app}>
-      <AnimatePresence>
+      <AnimatePresence mode='wait'>
         {
           showSidebar &&
           <motion.div 
@@ -25,12 +25,21 @@ const App = () => {
               width: 0
             }}
           >
+            <motion.div
+              initial={{
+                opacity: 0
+              }}
+              animate={{
+                opacity: 1
+              }}
+            >
             <Logo />
             <Accordion
               header="testy"
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime modi deleniti distinctio, asperiores nesciunt quibusdam animi libero possimus eum. Modi laboriosam eligendi similique nemo? Iure exercitationem enim aliquid voluptates perferendis!
             </Accordion>
+            </motion.div>
           </motion.div>
         }
       </AnimatePresence>
