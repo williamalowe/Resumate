@@ -9,6 +9,7 @@ import PersonalForm from '../PersonalForm/PersonalForm';
 import ContactForm from '../ContactForm/ContactForm';
 import SkillsForm from '../SkillsForm/SkillsForm';
 import ExperienceForm from '../ExperienceForm/ExperienceForm';
+import EducationForm from '../EducationForm/EducationForm';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -22,6 +23,7 @@ const App = () => {
   const [StreetAddress, setStreetAddress] = useState(null);
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
+  const [education, setEducation] = useState([]);
 
   const addSkill = (value) => {
     const newSkill = value;
@@ -37,6 +39,16 @@ const App = () => {
       description: description
     };
     setExperience(experience => [...experience, newExperience]);
+  }
+
+  const addEducation = (studyField, institute, start, completion) => {
+    const newEducation = {
+      studyField: studyField,
+      institute: institute,
+      start: start,
+      completion: completion
+    };
+    setEducation(education => [...education, newEducation]);
   }
 
   return (
@@ -107,7 +119,9 @@ const App = () => {
             <Accordion
               header="Education"
             >
-
+              <EducationForm 
+                handleSubmit={addEducation}
+              />
             </Accordion>
             {/* References */}
             <Accordion
@@ -164,6 +178,19 @@ const App = () => {
               {exp.start}-
               {exp.end}-
               {exp.description}-
+            </li>
+          )
+          }
+        </ul>
+        -
+        <ul>
+          {
+            education.map((edu, index) => 
+            <li key={index}>
+              {edu.studyField}-
+              {edu.institute}-
+              {edu.start}-
+              {edu.completion}-
             </li>
           )
           }
