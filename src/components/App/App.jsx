@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 import styles from './App.module.css';
 import Accordion from '../Accordion/Accordion';
+import Logo from '../Logo/Logo';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -24,6 +25,7 @@ const App = () => {
               width: 0
             }}
           >
+            <Logo />
             <Accordion
               header="testy"
             >
