@@ -14,6 +14,7 @@ import Header from '../Header/Header';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Skills from '../Skills/Skills';
+import Experience from '../Experience/Experience';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -182,6 +183,9 @@ const App = () => {
               {/* right content */}
               <About 
                 bio={bio}
+              />
+              <Experience 
+                experienceList={experience}
               />
             </div>
           </div>
