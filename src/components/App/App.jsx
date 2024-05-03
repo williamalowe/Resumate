@@ -162,6 +162,15 @@ const App = () => {
             name={firstName + ' ' + lastName}
             profession={profession}
           />
+          <div className={styles.outlet_body}>
+            {/* left */}
+            <div>
+            </div>
+            {/* right */}
+            <div>
+              right
+            </div>
+          </div>
         </div>
       </section>
     </main>
