@@ -10,6 +10,7 @@ import ContactForm from '../ContactForm/ContactForm';
 import SkillsForm from '../SkillsForm/SkillsForm';
 import ExperienceForm from '../ExperienceForm/ExperienceForm';
 import EducationForm from '../EducationForm/EducationForm';
+import Header from '../Header/Header';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -157,7 +158,10 @@ const App = () => {
       </div>
       <section className={styles.content}>
         <div className={styles.outlet}>
-
+          <Header 
+            name={firstName + ' ' + lastName}
+            profession={profession}
+          />
         </div>
       </section>
     </main>
