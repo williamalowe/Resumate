@@ -1,0 +1,16 @@
+.about {
+  margin-bottom: 1rem
+}
+.about>div {
+  padding: 0.5rem;
+  background: var(--resume-color);
+  width: fit-content;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.about>p {
+  font-size: 0.8rem;
+}

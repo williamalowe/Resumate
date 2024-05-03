@@ -11,6 +11,7 @@ import SkillsForm from '../SkillsForm/SkillsForm';
 import ExperienceForm from '../ExperienceForm/ExperienceForm';
 import EducationForm from '../EducationForm/EducationForm';
 import Header from '../Header/Header';
+import About from '../About/About';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -163,12 +164,14 @@ const App = () => {
             profession={profession}
           />
           <div className={styles.outlet_body}>
-            {/* left */}
             <div>
+              {/* left content */}
             </div>
-            {/* right */}
             <div>
-              right
+              {/* right content */}
+              <About 
+                bio={bio}
+              />
             </div>
           </div>
         </div>
