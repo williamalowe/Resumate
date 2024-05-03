@@ -13,6 +13,7 @@ import EducationForm from '../EducationForm/EducationForm';
 import Header from '../Header/Header';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import Skills from '../Skills/Skills';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -172,6 +173,9 @@ const App = () => {
                 emailAddress={emailAddress}
                 personalSite={personalSite}
                 streetAddress={streetAddress}
+              />
+              <Skills 
+                skillsList={skills}
               />
             </div>
             <div>
