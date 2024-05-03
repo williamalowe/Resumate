@@ -12,6 +12,7 @@ import ExperienceForm from '../ExperienceForm/ExperienceForm';
 import EducationForm from '../EducationForm/EducationForm';
 import Header from '../Header/Header';
 import About from '../About/About';
+import Contact from '../Contact/Contact';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -22,7 +23,7 @@ const App = () => {
   const [contactNumber, setContactNumber] = useState(null);
   const [emailAddress, setEmailAddress] = useState(null);
   const [personalSite, setPersonalSite] = useState(null);
-  const [StreetAddress, setStreetAddress] = useState(null);
+  const [streetAddress, setStreetAddress] = useState(null);
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
   const [education, setEducation] = useState([]);
@@ -166,6 +167,12 @@ const App = () => {
           <div className={styles.outlet_body}>
             <div>
               {/* left content */}
+              <Contact 
+                contactNumber={contactNumber}
+                emailAddress={emailAddress}
+                personalSite={personalSite}
+                streetAddress={streetAddress}
+              />
             </div>
             <div>
               {/* right content */}
