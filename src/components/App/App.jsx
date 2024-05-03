@@ -155,11 +155,11 @@ const App = () => {
           }
         </motion.button>
       </div>
-      <div className={styles.content}>
+      <section className={styles.content}>
         <div className={styles.outlet}>
-          
+
         </div>
-      </div>
+      </section>
     </main>
   )
 }
