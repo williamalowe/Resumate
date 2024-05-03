@@ -9,10 +9,7 @@ const Header = ({ name, profession }) => {
   }
   if (profession === null) {
     displayProfession = '-Your Profession Here-';
-  }
-
-  console.log(displayName);
-  
+  }  
 
   return (
     <div className={styles.header}>
