@@ -15,6 +15,7 @@ import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Skills from '../Skills/Skills';
 import Experience from '../Experience/Experience';
+import Education from '../Education/Education';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -177,6 +178,9 @@ const App = () => {
               />
               <Skills 
                 skillsList={skills}
+              />
+              <Education 
+                educationList={education}
               />
             </div>
             <div>

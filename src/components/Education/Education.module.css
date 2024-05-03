@@ -1,0 +1,24 @@
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.education>h5 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+}
+.item>h5 {
+  font-weight: 400;
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+}
+.item>h3 {
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+}
+.item>p {
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+}
