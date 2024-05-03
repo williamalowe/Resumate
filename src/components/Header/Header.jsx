@@ -5,7 +5,7 @@ const Header = ({ name, profession }) => {
   let displayProfession = profession;
 
   if (name === null + ' ' + null || name === ' ') {
-    displayName = 'Your Name Here'
+    displayName = '[Your Name Here]'
   }
   if (profession === null) {
     displayProfession = '-Your Profession Here-';
