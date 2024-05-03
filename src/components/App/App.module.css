@@ -27,3 +27,16 @@
   background: var(--text-color);
   box-sizing: border-box;
 }
+.content {
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+}
+.outlet {
+  box-sizing: border-box;
+  aspect-ratio: 2/3;
+  width: 600px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 4px 4px 4px 4px #00000075;
+}

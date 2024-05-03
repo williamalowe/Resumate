@@ -156,48 +156,9 @@ const App = () => {
         </motion.button>
       </div>
       <div className={styles.content}>
-        {firstName}-
-        {lastName}-
-        {profession}-
-        {bio}-
-        {contactNumber}-
-        {emailAddress}-
-        {personalSite}-
-        {StreetAddress}-
-        <ul>
-          {
-            skills.map((skill, index) => 
-            <li key={index}>{skill}</li>
-          )
-          }
-        </ul>
-        -
-        <ul>
-          {
-            experience.map((exp, index) => 
-            <li key={index}>
-              {exp.workplace}-
-              {exp.role}-
-              {exp.start}-
-              {exp.end}-
-              {exp.description}-
-            </li>
-          )
-          }
-        </ul>
-        -
-        <ul>
-          {
-            education.map((edu, index) => 
-            <li key={index}>
-              {edu.studyField}-
-              {edu.institute}-
-              {edu.start}-
-              {edu.completion}-
-            </li>
-          )
-          }
-        </ul>
+        <div className={styles.outlet}>
+          
+        </div>
       </div>
     </main>
   )
