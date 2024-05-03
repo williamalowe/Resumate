@@ -1,0 +1,30 @@
+.contact {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact>h5 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.item>svg {
+  width: 16px;
+}
+.item>p {
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+  max-width: 160px;
+  overflow-wrap: break-word;
+}

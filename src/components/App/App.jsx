@@ -10,6 +10,12 @@ import ContactForm from '../ContactForm/ContactForm';
 import SkillsForm from '../SkillsForm/SkillsForm';
 import ExperienceForm from '../ExperienceForm/ExperienceForm';
 import EducationForm from '../EducationForm/EducationForm';
+import Header from '../Header/Header';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import Skills from '../Skills/Skills';
+import Experience from '../Experience/Experience';
+import Education from '../Education/Education';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -20,7 +26,7 @@ const App = () => {
   const [contactNumber, setContactNumber] = useState(null);
   const [emailAddress, setEmailAddress] = useState(null);
   const [personalSite, setPersonalSite] = useState(null);
-  const [StreetAddress, setStreetAddress] = useState(null);
+  const [streetAddress, setStreetAddress] = useState(null);
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
   const [education, setEducation] = useState([]);
@@ -155,50 +161,40 @@ const App = () => {
           }
         </motion.button>
       </div>
-      <div className={styles.content}>
-        {firstName}-
-        {lastName}-
-        {profession}-
-        {bio}-
-        {contactNumber}-
-        {emailAddress}-
-        {personalSite}-
-        {StreetAddress}-
-        <ul>
-          {
-            skills.map((skill, index) => 
-            <li key={index}>{skill}</li>
-          )
-          }
-        </ul>
-        -
-        <ul>
-          {
-            experience.map((exp, index) => 
-            <li key={index}>
-              {exp.workplace}-
-              {exp.role}-
-              {exp.start}-
-              {exp.end}-
-              {exp.description}-
-            </li>
-          )
-          }
-        </ul>
-        -
-        <ul>
-          {
-            education.map((edu, index) => 
-            <li key={index}>
-              {edu.studyField}-
-              {edu.institute}-
-              {edu.start}-
-              {edu.completion}-
-            </li>
-          )
-          }
-        </ul>
-      </div>
+      <section className={styles.content}>
+        <div className={styles.outlet}>
+          <Header 
+            name={firstName + ' ' + lastName}
+            profession={profession}
+          />
+          <div className={styles.outlet_body}>
+            <div>
+              {/* left content */}
+              <Contact 
+                contactNumber={contactNumber}
+                emailAddress={emailAddress}
+                personalSite={personalSite}
+                streetAddress={streetAddress}
+              />
+              <Skills 
+                skillsList={skills}
+              />
+              <Education 
+                educationList={education}
+              />
+            </div>
+            <div>
+              {/* right content */}
+              <About 
+                bio={bio}
+              />
+              <Experience 
+                experienceList={experience}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
