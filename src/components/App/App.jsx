@@ -16,6 +16,8 @@ import Contact from '../Contact/Contact';
 import Skills from '../Skills/Skills';
 import Experience from '../Experience/Experience';
 import Education from '../Education/Education';
+import ReferenceForm from '../ReferenceForm/ReferenceForm';
+import References from '../References/References';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -30,6 +32,7 @@ const App = () => {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
   const [education, setEducation] = useState([]);
+  const [references, setReferences] = useState([]);
 
   const addSkill = (value) => {
     const newSkill = value;
@@ -55,6 +58,16 @@ const App = () => {
       completion: completion
     };
     setEducation(education => [...education, newEducation]);
+  }
+
+  const addReference = ( referenceName, referenceRelationship, referenceNumber, referenceEmail ) => {
+    const newReference = {
+      name: referenceName,
+      relationship: referenceRelationship,
+      contactNumber: referenceNumber,
+      emailAddress: referenceEmail
+    };
+    setReferences(references => [...references, newReference]);
   }
 
   return (
@@ -136,7 +149,9 @@ const App = () => {
             <Accordion
               header="References"
             >
-              
+              <ReferenceForm 
+                handleSubmit={addReference}
+              />
             </Accordion>
             </motion.div>
           </motion.div>
@@ -191,7 +206,10 @@ const App = () => {
               <Experience 
                 experienceList={experience}
               />
-            </div>
+              <References 
+                referenceList={references}
+              />
+            </div>   
           </div>
         </div>
       </section>
