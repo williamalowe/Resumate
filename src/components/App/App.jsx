@@ -30,6 +30,7 @@ const App = () => {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
   const [education, setEducation] = useState([]);
+  const [references, setReferences] = useState([]);
 
   const addSkill = (value) => {
     const newSkill = value;
@@ -55,6 +56,16 @@ const App = () => {
       completion: completion
     };
     setEducation(education => [...education, newEducation]);
+  }
+
+  const addReference = ( referenceName, referenceRelationship, referenceNumber, referenceEmail ) => {
+    const newReference = {
+      name: referenceName,
+      relationship: referenceRelationship,
+      contactNumber: referenceNumber,
+      emailAddress: referenceEmail
+    };
+    setReferences(references => [...references, newReference]);
   }
 
   return (

@@ -1,8 +1,8 @@
 .app {
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
+  min-height: 100vh;
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .sidebar {
   background: var(--text-color);
@@ -29,6 +29,7 @@
 }
 .content {
   flex-grow: 1;
+  padding: 1rem;
   display: grid;
   place-items: center;
 }
