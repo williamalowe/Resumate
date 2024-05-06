@@ -17,6 +17,7 @@ import Skills from '../Skills/Skills';
 import Experience from '../Experience/Experience';
 import Education from '../Education/Education';
 import ReferenceForm from '../ReferenceForm/ReferenceForm';
+import References from '../References/References';
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -205,18 +206,9 @@ const App = () => {
               <Experience 
                 experienceList={experience}
               />
-              <ul>
-            {
-              references.map((reference, index) => 
-              <li key={index}>
-                <h5>{reference.name}</h5>
-                <p>{reference.relationship}</p>
-                <p>{reference.contactNumber}</p>
-                <p>{reference.emailAddress}</p>
-              </li>
-              )
-            }
-            </ul>
+              <References 
+                referenceList={references}
+              />
             </div>   
           </div>
         </div>
