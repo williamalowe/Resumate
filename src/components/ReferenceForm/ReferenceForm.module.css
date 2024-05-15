@@ -7,20 +7,20 @@
   display: flex;
   align-items: center;
 }
-.input>h5 {
+.input > h5 {
   flex: 1;
   color: #fff;
   font-weight: 400;
   font-size: 0.8rem;
 }
-.input>input {
+.input > input {
   flex: 2;
   border: none;
   background: none;
   color: #fff;
   border-bottom: 1px solid #fff;
 }
-.form>button {
+.form > button {
   background: none;
   color: #fff;
   border: 1px solid #fff;

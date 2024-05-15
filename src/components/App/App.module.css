@@ -19,7 +19,7 @@
   left: 2rem;
   cursor: pointer;
 }
-.sidebar_button>svg {
+.sidebar_button > svg {
   width: 1.4rem;
   height: 1.4rem;
 }
@@ -46,13 +46,13 @@
   display: flex;
   flex-grow: 1;
 }
-.outlet_body>div:first-child {
+.outlet_body > div:first-child {
   flex: 1;
   background: #1f1f1f1a;
   padding: 1rem;
   overflow: hidden;
 }
-.outlet_body>div:last-child {
+.outlet_body > div:last-child {
   flex: 2;
   padding: 1rem;
 }

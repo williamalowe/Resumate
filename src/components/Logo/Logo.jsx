@@ -1,4 +1,4 @@
-import styles from './Logo.module.css';
+import styles from "./Logo.module.css";
 
 const Logo = () => {
   return (
@@ -6,7 +6,7 @@ const Logo = () => {
       <div className={styles.left}>Resu</div>
       <div className={styles.right}>Mate</div>
     </div>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

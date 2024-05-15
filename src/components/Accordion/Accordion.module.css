@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-.accordion>button {
+.accordion > button {
   width: 100%;
   border: none;
   background: none;
@@ -13,12 +13,12 @@
   border-bottom: 1px solid #fff;
   cursor: pointer;
 }
-.accordion>button>div {
+.accordion > button > div {
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
 }
-.accordion>button>div:last-child {
+.accordion > button > div:last-child {
   margin-left: auto;
 }
 .content {

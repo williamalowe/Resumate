@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-.contact>h5 {
+.contact > h5 {
   font-weight: 400;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
@@ -19,10 +19,10 @@
   align-items: center;
   gap: 0.25rem;
 }
-.item>svg {
+.item > svg {
   width: 16px;
 }
-.item>p {
+.item > p {
   font-size: 0.8rem;
   font-family: "Roboto", sans-serif;
   max-width: 160px;
