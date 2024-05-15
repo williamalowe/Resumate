@@ -3,12 +3,12 @@
   flex-direction: column;
   gap: 1rem;
 }
-.input>h5 {
+.input > h5 {
   color: #fff;
   font-size: 0.8rem;
   font-weight: 400;
 }
-.input>input {
+.input > input {
   width: 80%;
   background: none;
   color: #fff;

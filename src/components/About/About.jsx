@@ -1,4 +1,4 @@
-import styles from './About.module.css';
+import styles from "./About.module.css";
 
 const About = ({ bio }) => {
   return (
@@ -6,7 +6,7 @@ const About = ({ bio }) => {
       <h5>Profile</h5>
       <p>{bio}</p>
     </article>
-  )
-}
+  );
+};
 
-export default About
+export default About;

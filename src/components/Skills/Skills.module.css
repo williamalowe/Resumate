@@ -4,17 +4,17 @@
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.skills>h5 {
+.skills > h5 {
   font-weight: 400;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
 }
-.skills>ul {
+.skills > ul {
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
-.skills>ul>li {
+.skills > ul > li {
   font-family: "Roboto", sans-serif;
 }

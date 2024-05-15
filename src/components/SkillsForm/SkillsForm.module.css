@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
 }
-.form>h5 {
+.form > h5 {
   color: #fff;
   flex: 1;
   font-size: 0.8rem;
@@ -13,17 +13,17 @@
   display: flex;
   gap: 0.25rem;
 }
-.input>input {
+.input > input {
   background: none;
   color: #fff;
   border: none;
   border-bottom: 1px solid #fff;
 }
-.input>button {
+.input > button {
   background: none;
   border: 1px solid #fff;
   cursor: pointer;
 }
-.input>button>svg {
+.input > button > svg {
   color: #fff;
 }

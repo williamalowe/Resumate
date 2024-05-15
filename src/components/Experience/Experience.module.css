@@ -4,17 +4,20 @@
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.experience>h5 {
+.item > h3 {
+  font-family: "Roboto", sans-serif;
+}
+.experience > h5 {
   font-weight: 400;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
 }
-.item>h5 {
+.item > h5 {
   font-weight: 400;
   font-size: 0.8rem;
   font-family: "Roboto", sans-serif;
 }
-.item>p {
+.item > p {
   margin-top: 0.25rem;
   font-size: 0.8rem;
   font-family: "Roboto", sans-serif;
