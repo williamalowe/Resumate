@@ -71,6 +71,8 @@ const EducationForm = ({ handleSubmit }) => {
         <input
           type="month"
           placeholder="Jan 2020"
+          min="1900-01"
+          max="2999-12"
           value={start}
           onChange={(e) => setStart(e.target.value)}
         />
@@ -79,8 +81,9 @@ const EducationForm = ({ handleSubmit }) => {
         <h5>Completion Date: </h5>
         <input
           type="month"
-          placeholder="Jan 2024
-        "
+          placeholder="Jan 2024"
+          min="1900-01"
+          max="2999-12"
           value={completion}
           onChange={(e) => setCompletion(e.target.value)}
         />
