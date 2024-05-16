@@ -73,6 +73,8 @@ const ExperienceForm = ({ handleSubmit }) => {
         <input
           type="month"
           placeholder="March 2023"
+          min="1900-01"
+          max="2999-12"
           value={start}
           onChange={(e) => setStart(e.target.value)}
         />
@@ -82,6 +84,8 @@ const ExperienceForm = ({ handleSubmit }) => {
         <input
           type="month"
           placeholder="Mar 2024"
+          min="1900-01"
+          max="2999-12"
           value={end}
           onChange={(e) => setEnd(e.target.value)}
         />
