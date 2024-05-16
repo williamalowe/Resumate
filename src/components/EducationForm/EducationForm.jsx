@@ -15,13 +15,14 @@ const EducationForm = ({ handleSubmit }) => {
     setCompletion("");
   };
 
-  const addEducation = () => {
+  const addEducation = (e) => {
+    e.preventDefault();
     handleSubmit(studyField, institute, start, completion);
     reset();
   };
 
   return (
-    <div className={styles.form}>
+    <form className={styles.form}>
       <div className={styles.input}>
         <h5>Field of Study: </h5>
         <input
@@ -70,7 +71,7 @@ const EducationForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
-    </div>
+    </form>
   );
 };
 
