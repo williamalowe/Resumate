@@ -11,15 +11,16 @@ const ContactForm = ({
       <div className={styles.input}>
         <h5>Contact Number: </h5>
         <input
-          type="text"
+          type="number"
           placeholder="0412 345 678"
+          maxLength={12}
           onChange={handleContactNumber}
         />
       </div>
       <div className={styles.input}>
         <h5>Email Address: </h5>
         <input
-          type="text"
+          type="email"
           placeholder="PersonalEmail@Provider.com"
           onChange={handleEmailAddress}
         />
