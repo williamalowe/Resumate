@@ -27,6 +27,14 @@
   background: var(--text-color);
   box-sizing: border-box;
 }
+.sidebar_content > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar_content > div > div:last-child {
+  margin-top: auto;
+}
 .content {
   flex-grow: 1;
   padding: 1rem;
