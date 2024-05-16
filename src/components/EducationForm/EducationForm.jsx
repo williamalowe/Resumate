@@ -7,6 +7,7 @@ const EducationForm = ({ handleSubmit }) => {
   const [institute, setInstitute] = useState("");
   const [start, setStart] = useState("");
   const [completion, setCompletion] = useState("");
+  const [valid, setValid] = useState(true);
 
   const reset = () => {
     setStudyField("");
@@ -42,8 +43,14 @@ const EducationForm = ({ handleSubmit }) => {
 
   const addEducation = (e) => {
     e.preventDefault();
-    handleSubmit(studyField, institute, convertDate(start), convertDate(completion));
-    reset();
+
+    if (studyField === '' || institute === '' || start === '' || completion === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+      handleSubmit(studyField, institute, convertDate(start), convertDate(completion));
+      reset();
+    }
   };
 
   return (
@@ -55,6 +62,7 @@ const EducationForm = ({ handleSubmit }) => {
           placeholder="Bachelor of Computer Science"
           value={studyField}
           onChange={(e) => setStudyField(e.target.value)}
+          required
         />
       </div>
       <div className={styles.input}>
@@ -64,6 +72,7 @@ const EducationForm = ({ handleSubmit }) => {
           placeholder="Awesome Uni, Melbourne"
           value={institute}
           onChange={(e) => setInstitute(e.target.value)}
+          required
         />
       </div>
       <div className={styles.input}>
@@ -75,6 +84,7 @@ const EducationForm = ({ handleSubmit }) => {
           max="2999-12"
           value={start}
           onChange={(e) => setStart(e.target.value)}
+          required
         />
       </div>
       <div className={styles.input}>
@@ -86,6 +96,7 @@ const EducationForm = ({ handleSubmit }) => {
           max="2999-12"
           value={completion}
           onChange={(e) => setCompletion(e.target.value)}
+          required
         />
       </div>
       <motion.button
@@ -99,6 +110,10 @@ const EducationForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
+      {
+        !valid && 
+        <p>Please enter all required fields.</p>
+      }
     </form>
   );
 };

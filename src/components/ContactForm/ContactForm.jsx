@@ -15,6 +15,7 @@ const ContactForm = ({
           placeholder="0412 345 678"
           maxLength={12}
           onChange={handleContactNumber}
+          required
         />
       </div>
       <div className={styles.input}>
@@ -23,6 +24,7 @@ const ContactForm = ({
           type="email"
           placeholder="PersonalEmail@Provider.com"
           onChange={handleEmailAddress}
+          required
         />
       </div>
       <div className={styles.input}>

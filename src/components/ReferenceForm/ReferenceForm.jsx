@@ -7,6 +7,7 @@ const ReferenceForm = ({ handleSubmit }) => {
   const [referenceRelation, setReferenceRelation] = useState("");
   const [referenceNumber, setReferenceNumber] = useState("");
   const [referenceEmail, setReferenceEmail] = useState("");
+  const [valid, setValid] = useState(true);
 
   const reset = () => {
     setReferenceName("");
@@ -17,13 +18,18 @@ const ReferenceForm = ({ handleSubmit }) => {
 
   const addReference = (e) => {
     e.preventDefault();
-    handleSubmit(
-      referenceName,
-      referenceRelation,
-      referenceNumber,
-      referenceEmail,
-    );
-    reset();
+    if (referenceName === '' || referenceRelation === '' || referenceNumber === '' || referenceEmail === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+      handleSubmit(
+        referenceName,
+        referenceRelation,
+        referenceNumber,
+        referenceEmail,
+      );
+      reset();
+    }
   };
 
   return (
@@ -76,6 +82,10 @@ const ReferenceForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
+      {
+        !valid && 
+        <p>Please enter all required fields.</p>
+      }
     </form>
   );
 };

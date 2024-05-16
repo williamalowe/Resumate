@@ -6,11 +6,17 @@ import { useState } from "react";
 
 const SkillsForm = ({ handleSubmit }) => {
   const [newSkill, setNewSkill] = useState("");
+  const [valid, setValid] = useState(true);
 
   const addSkill = (e) => {
     e.preventDefault();
-    handleSubmit(newSkill);
-    setNewSkill("");
+    if (newSkill === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+      handleSubmit(newSkill);
+      setNewSkill("");
+    }
   };
 
   return (
@@ -34,6 +40,10 @@ const SkillsForm = ({ handleSubmit }) => {
         >
           <FontAwesomeIcon icon={faPlus} />
         </motion.button>
+          {
+            !valid && 
+            <p>Please enter a skill to add.</p>
+          }
       </div>
     </form>
   );

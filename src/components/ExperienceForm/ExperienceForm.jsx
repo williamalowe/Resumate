@@ -8,6 +8,7 @@ const ExperienceForm = ({ handleSubmit }) => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [description, setDescription] = useState("");
+  const [valid, setValid] = useState(true);
 
   const convertDate = (date) => {
     const months = [
@@ -44,8 +45,13 @@ const ExperienceForm = ({ handleSubmit }) => {
 
   const addExperience = (e) => {
     e.preventDefault();
-    handleSubmit(workplace, role, convertDate(start), convertDate(end), description);
-    reset();
+    if (workplace === '' || role === '' || start === '' || end === '' || description === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+      handleSubmit(workplace, role, convertDate(start), convertDate(end), description);
+      reset();
+    }
   };
 
   return (
@@ -113,6 +119,10 @@ const ExperienceForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
+      {
+        !valid && 
+        <p>Please enter all required fields.</p>
+      }
     </form>
   );
 };

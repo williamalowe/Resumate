@@ -36,3 +36,6 @@
   filter: invert(1);
   cursor: pointer;
 }
+.form > p {
+  color: red;
+}

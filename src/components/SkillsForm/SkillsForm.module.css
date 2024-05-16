@@ -1,7 +1,3 @@
-.form {
-  display: flex;
-  align-items: center;
-}
 .input > h5 {
   color: #fff;
   flex: 1;
@@ -28,4 +24,7 @@
 }
 .input > button > svg {
   color: #fff;
+}
+.input > p {
+  color: red;
 }
