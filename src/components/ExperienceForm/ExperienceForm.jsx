@@ -17,13 +17,14 @@ const ExperienceForm = ({ handleSubmit }) => {
     setDescription("");
   };
 
-  const addExperience = () => {
+  const addExperience = (e) => {
+    e.preventDefault();
     handleSubmit(workplace, role, start, end, description);
     reset();
   };
 
   return (
-    <div className={styles.form}>
+    <form className={styles.form}>
       <div className={styles.input}>
         <h5>Workplace: </h5>
         <input
@@ -82,7 +83,7 @@ const ExperienceForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
-    </div>
+    </form>
   );
 };
 
