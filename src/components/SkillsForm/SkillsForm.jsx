@@ -7,15 +7,16 @@ import { useState } from "react";
 const SkillsForm = ({ handleSubmit }) => {
   const [newSkill, setNewSkill] = useState("");
 
-  const addSkill = () => {
+  const addSkill = (e) => {
+    e.preventDefault();
     handleSubmit(newSkill);
     setNewSkill("");
   };
 
   return (
-    <div className={styles.form}>
-      <h5>Add Skill:</h5>
+    <form className={styles.form}>
       <div className={styles.input}>
+        <h5>Add Skill:</h5>
         <input
           type="text"
           placeholder="JavaScript"
@@ -34,7 +35,7 @@ const SkillsForm = ({ handleSubmit }) => {
           <FontAwesomeIcon icon={faPlus} />
         </motion.button>
       </div>
-    </div>
+    </form>
   );
 };
 

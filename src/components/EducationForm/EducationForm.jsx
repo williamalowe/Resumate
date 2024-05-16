@@ -15,18 +15,19 @@ const EducationForm = ({ handleSubmit }) => {
     setCompletion("");
   };
 
-  const addEducation = () => {
+  const addEducation = (e) => {
+    e.preventDefault();
     handleSubmit(studyField, institute, start, completion);
     reset();
   };
 
   return (
-    <div className={styles.form}>
+    <form className={styles.form}>
       <div className={styles.input}>
-        <h5>Field of Study: </h5>
+        <h5>Qualification: </h5>
         <input
           type="text"
-          placeholder="Bachelors of Computer Science"
+          placeholder="Bachelor of Computer Science"
           value={studyField}
           onChange={(e) => setStudyField(e.target.value)}
         />
@@ -70,7 +71,7 @@ const EducationForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
-    </div>
+    </form>
   );
 };
 
