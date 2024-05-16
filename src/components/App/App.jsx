@@ -18,6 +18,7 @@ import Experience from "../Experience/Experience";
 import Education from "../Education/Education";
 import ReferenceForm from "../ReferenceForm/ReferenceForm";
 import References from "../References/References";
+import RemovalList from "../RemovalList/RemovalList";
 
 const App = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -137,6 +138,38 @@ const App = () => {
               <Accordion header="References">
                 <ReferenceForm handleSubmit={addReference} />
               </Accordion>
+              {/* Removal */}
+              <div className={styles.removal}>
+              <Accordion header="Remove Skills">
+                <RemovalList 
+                  target='skills'
+                  inputList={skills}
+                  setList={setSkills}
+                />
+              </Accordion>
+              <Accordion header="Remove Experience Items">
+                <RemovalList 
+                  target='experience'
+                  inputList={experience}
+                  setList={setExperience}
+                />
+              </Accordion>
+              <Accordion header="Remove Education Items">
+                <RemovalList 
+                  target='education'
+                  inputList={education}
+                  setList={setEducation}
+                />
+              </Accordion>
+              <Accordion header="Remove References">
+                <RemovalList 
+                  target='references'
+                  inputList={references}
+                  setList={setReferences}
+                />
+              </Accordion>
+              </div>
+              
             </motion.div>
           </motion.div>
         )}

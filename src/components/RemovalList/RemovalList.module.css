@@ -1,0 +1,25 @@
+.list > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.item { 
+  display: flex;
+  color: #fff;
+}
+.item > div:first-child {
+  flex: 4;
+}
+.button {
+  margin-left: auto;
+  display: flex;
+  justify-content: right;
+  flex: 1;
+}
+.button>button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
