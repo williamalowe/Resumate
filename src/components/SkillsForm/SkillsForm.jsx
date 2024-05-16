@@ -15,8 +15,8 @@ const SkillsForm = ({ handleSubmit }) => {
 
   return (
     <form className={styles.form}>
-      <h5>Add Skill:</h5>
       <div className={styles.input}>
+        <h5>Add Skill:</h5>
         <input
           type="text"
           placeholder="JavaScript"
