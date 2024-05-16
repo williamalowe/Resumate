@@ -5,8 +5,7 @@
 }
 .input {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
 }
 .input > h5,
 .bio > h5 {
@@ -21,6 +20,7 @@
   color: #fff;
   border: none;
   border-bottom: 1px solid #fff;
+  padding: 0;
 }
 .bio > textarea {
   width: 100%;
