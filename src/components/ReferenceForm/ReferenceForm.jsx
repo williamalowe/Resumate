@@ -15,7 +15,8 @@ const ReferenceForm = ({ handleSubmit }) => {
     setReferenceEmail("");
   };
 
-  const addReference = () => {
+  const addReference = (e) => {
+    e.preventDefault();
     handleSubmit(
       referenceName,
       referenceRelation,
@@ -26,7 +27,7 @@ const ReferenceForm = ({ handleSubmit }) => {
   };
 
   return (
-    <div className={styles.form}>
+    <form className={styles.form}>
       <div className={styles.input}>
         <h5>Reference Name: </h5>
         <input
@@ -74,7 +75,7 @@ const ReferenceForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
-    </div>
+    </form>
   );
 };
 
