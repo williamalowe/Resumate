@@ -49,8 +49,9 @@ const ReferenceForm = ({ handleSubmit }) => {
       <div className={styles.input}>
         <h5>Contact Number: </h5>
         <input
-          type="text"
+          type="number"
           placeholder="0412 345 678"
+          maxLength='12'
           value={referenceNumber}
           onChange={(e) => setReferenceNumber(e.target.value)}
         />
@@ -58,7 +59,7 @@ const ReferenceForm = ({ handleSubmit }) => {
       <div className={styles.input}>
         <h5>Email Address: </h5>
         <input
-          type="text"
+          type="email"
           placeholder="ReferenceName@provider.com"
           value={referenceEmail}
           onChange={(e) => setReferenceEmail(e.target.value)}
