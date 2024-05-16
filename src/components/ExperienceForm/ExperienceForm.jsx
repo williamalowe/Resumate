@@ -8,6 +8,32 @@ const ExperienceForm = ({ handleSubmit }) => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [description, setDescription] = useState("");
+  const [valid, setValid] = useState(true);
+
+  const convertDate = (date) => {
+    const months = [
+      ['01', 'Jan'],
+      ['02', 'Feb'],
+      ['03', 'Mar'],
+      ['04', 'Apr'],
+      ['05', 'May'],
+      ['06', 'Jun'],
+      ['07', 'Jul'],
+      ['08', 'Aug'],
+      ['09', 'Sep'],
+      ['10', 'Oct'],
+      ['11', 'Nov'],
+      ['12', 'Dec'],
+    ]
+    const year = date.slice(0, 4);
+    let month;
+    for (let i = 0; i < months.length; i ++) {
+      if (date.slice(5, 7) === months[i][0]) {
+        month = months[i][1];
+      }
+    }
+    return month + ' ' + year;
+  }
 
   const reset = () => {
     setWorkplace("");
@@ -19,8 +45,13 @@ const ExperienceForm = ({ handleSubmit }) => {
 
   const addExperience = (e) => {
     e.preventDefault();
-    handleSubmit(workplace, role, start, end, description);
-    reset();
+    if (workplace === '' || role === '' || start === '' || end === '' || description === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+      handleSubmit(workplace, role, convertDate(start), convertDate(end), description);
+      reset();
+    }
   };
 
   return (
@@ -46,8 +77,10 @@ const ExperienceForm = ({ handleSubmit }) => {
       <div className={styles.input}>
         <h5>Start Date: </h5>
         <input
-          type="text"
-          placeholder="Mar 2023"
+          type="month"
+          placeholder="March 2023"
+          min="1900-01"
+          max="2999-12"
           value={start}
           onChange={(e) => setStart(e.target.value)}
         />
@@ -55,8 +88,10 @@ const ExperienceForm = ({ handleSubmit }) => {
       <div className={styles.input}>
         <h5>End Date: </h5>
         <input
-          type="text"
+          type="month"
           placeholder="Mar 2024"
+          min="1900-01"
+          max="2999-12"
           value={end}
           onChange={(e) => setEnd(e.target.value)}
         />
@@ -68,6 +103,7 @@ const ExperienceForm = ({ handleSubmit }) => {
           cols="30"
           rows="10"
           placeholder="Tell us about your role..."
+          maxLength={240}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
@@ -83,6 +119,10 @@ const ExperienceForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
+      {
+        !valid && 
+        <p>Please enter all required fields.</p>
+      }
     </form>
   );
 };

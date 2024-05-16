@@ -27,3 +27,6 @@
   border: 1px solid #fff;
   cursor: pointer;
 }
+.form > p {
+  color: red;
+}

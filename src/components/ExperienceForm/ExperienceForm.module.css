@@ -32,3 +32,10 @@
   border: 1px solid #fff;
   cursor: pointer;
 }
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+.form > p {
+  color: red;
+}

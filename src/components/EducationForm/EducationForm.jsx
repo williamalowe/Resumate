@@ -7,6 +7,7 @@ const EducationForm = ({ handleSubmit }) => {
   const [institute, setInstitute] = useState("");
   const [start, setStart] = useState("");
   const [completion, setCompletion] = useState("");
+  const [valid, setValid] = useState(true);
 
   const reset = () => {
     setStudyField("");
@@ -15,10 +16,41 @@ const EducationForm = ({ handleSubmit }) => {
     setCompletion("");
   };
 
+  const convertDate = (date) => {
+    const months = [
+      ['01', 'Jan'],
+      ['02', 'Feb'],
+      ['03', 'Mar'],
+      ['04', 'Apr'],
+      ['05', 'May'],
+      ['06', 'Jun'],
+      ['07', 'Jul'],
+      ['08', 'Aug'],
+      ['09', 'Sep'],
+      ['10', 'Oct'],
+      ['11', 'Nov'],
+      ['12', 'Dec'],
+    ]
+    const year = date.slice(0, 4);
+    let month;
+    for (let i = 0; i < months.length; i ++) {
+      if (date.slice(5, 7) === months[i][0]) {
+        month = months[i][1];
+      }
+    }
+    return month + ' ' + year;
+  }
+
   const addEducation = (e) => {
     e.preventDefault();
-    handleSubmit(studyField, institute, start, completion);
-    reset();
+
+    if (studyField === '' || institute === '' || start === '' || completion === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+      handleSubmit(studyField, institute, convertDate(start), convertDate(completion));
+      reset();
+    }
   };
 
   return (
@@ -30,6 +62,7 @@ const EducationForm = ({ handleSubmit }) => {
           placeholder="Bachelor of Computer Science"
           value={studyField}
           onChange={(e) => setStudyField(e.target.value)}
+          required
         />
       </div>
       <div className={styles.input}>
@@ -39,25 +72,31 @@ const EducationForm = ({ handleSubmit }) => {
           placeholder="Awesome Uni, Melbourne"
           value={institute}
           onChange={(e) => setInstitute(e.target.value)}
+          required
         />
       </div>
       <div className={styles.input}>
         <h5>Start Date: </h5>
         <input
-          type="text"
+          type="month"
           placeholder="Jan 2020"
+          min="1900-01"
+          max="2999-12"
           value={start}
           onChange={(e) => setStart(e.target.value)}
+          required
         />
       </div>
       <div className={styles.input}>
         <h5>Completion Date: </h5>
         <input
-          type="text"
-          placeholder="Jan 2024
-        "
+          type="month"
+          placeholder="Jan 2024"
+          min="1900-01"
+          max="2999-12"
           value={completion}
           onChange={(e) => setCompletion(e.target.value)}
+          required
         />
       </div>
       <motion.button
@@ -71,6 +110,10 @@ const EducationForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
+      {
+        !valid && 
+        <p>Please enter all required fields.</p>
+      }
     </form>
   );
 };

@@ -7,6 +7,7 @@ const ReferenceForm = ({ handleSubmit }) => {
   const [referenceRelation, setReferenceRelation] = useState("");
   const [referenceNumber, setReferenceNumber] = useState("");
   const [referenceEmail, setReferenceEmail] = useState("");
+  const [valid, setValid] = useState(true);
 
   const reset = () => {
     setReferenceName("");
@@ -17,13 +18,18 @@ const ReferenceForm = ({ handleSubmit }) => {
 
   const addReference = (e) => {
     e.preventDefault();
-    handleSubmit(
-      referenceName,
-      referenceRelation,
-      referenceNumber,
-      referenceEmail,
-    );
-    reset();
+    if (referenceName === '' || referenceRelation === '' || referenceNumber === '' || referenceEmail === '') {
+      setValid(false);
+    } else {
+      setValid(true);
+      handleSubmit(
+        referenceName,
+        referenceRelation,
+        referenceNumber,
+        referenceEmail,
+      );
+      reset();
+    }
   };
 
   return (
@@ -49,8 +55,9 @@ const ReferenceForm = ({ handleSubmit }) => {
       <div className={styles.input}>
         <h5>Contact Number: </h5>
         <input
-          type="text"
+          type="number"
           placeholder="0412 345 678"
+          maxLength='12'
           value={referenceNumber}
           onChange={(e) => setReferenceNumber(e.target.value)}
         />
@@ -58,7 +65,7 @@ const ReferenceForm = ({ handleSubmit }) => {
       <div className={styles.input}>
         <h5>Email Address: </h5>
         <input
-          type="text"
+          type="email"
           placeholder="ReferenceName@provider.com"
           value={referenceEmail}
           onChange={(e) => setReferenceEmail(e.target.value)}
@@ -75,6 +82,10 @@ const ReferenceForm = ({ handleSubmit }) => {
       >
         Add
       </motion.button>
+      {
+        !valid && 
+        <p>Please enter all required fields.</p>
+      }
     </form>
   );
 };

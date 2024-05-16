@@ -25,13 +25,14 @@ const PersonalForm = ({
         />
       </div>
       <div className={styles.bio}>
-        <h5>About You:</h5>
+        <h5>About You (Max 300 Characters):</h5>
         <textarea
           name="bio"
           id=""
           cols="30"
           rows="10"
           placeholder="Tell us about yourself..."
+          maxLength={300}
           onChange={handleBio}
         ></textarea>
       </div>
