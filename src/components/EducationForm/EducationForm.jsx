@@ -24,10 +24,10 @@ const EducationForm = ({ handleSubmit }) => {
   return (
     <form className={styles.form}>
       <div className={styles.input}>
-        <h5>Field of Study: </h5>
+        <h5>Qualification: </h5>
         <input
           type="text"
-          placeholder="Bachelors of Computer Science"
+          placeholder="Bachelor of Computer Science"
           value={studyField}
           onChange={(e) => setStudyField(e.target.value)}
         />
