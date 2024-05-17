@@ -54,7 +54,7 @@
   flex-direction: column;
   box-sizing: border-box;
   aspect-ratio: 2/3;
-  width: 480px;
+  width: 600px;
   border-radius: 0.5rem;
   box-shadow: 4px 4px 4px 4px #00000075;
 }
@@ -63,12 +63,12 @@
   flex-grow: 1;
 }
 .outlet_body > div:first-child {
-  flex: 1;
+  flex: 2;
   background: #1f1f1f1a;
   padding: 1rem;
   overflow: hidden;
 }
 .outlet_body > div:last-child {
-  flex: 2;
+  flex: 3;
   padding: 1rem;
 }

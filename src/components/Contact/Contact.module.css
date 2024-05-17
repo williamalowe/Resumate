@@ -25,6 +25,6 @@
 .item > p {
   font-size: 0.8rem;
   font-family: "Roboto", sans-serif;
-  max-width: 160px;
+  max-width: 200px;
   overflow-wrap: break-word;
 }
